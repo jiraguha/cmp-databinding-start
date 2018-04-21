@@ -1,0 +1,8 @@
+<div class="panel-heading">{{ server.serverName }}</div>
+<div class="panel-body">
+  <p>
+    <strong *ngIf="serverCkeck()" style="color: red">{{ server.serverContent }}</strong>
+    <em *ngIf="blueprintCkeck()">{{ server.serverContent }}</em>
+  </p>
+</div>
+
