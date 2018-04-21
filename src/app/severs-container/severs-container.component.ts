@@ -17,11 +17,23 @@ export class SeversContainerComponent implements OnInit {
   ngOnInit() {
   }
 
+
   blueprintCkeck() {
     return this.server.type === ServerType.BLUEPRINT;
   }
 
   serverCkeck() {
     return this.server.type === ServerType.SERVER;
+  }
+
+  serverColor() {
+    switch (this.server.type) {
+      case ServerType.BLUEPRINT :
+        return 'blue';
+      case ServerType.SERVER:
+        return 'red';
+      default:
+        return 'black';
+    }
   }
 }
