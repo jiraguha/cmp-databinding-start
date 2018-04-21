@@ -36,4 +36,8 @@ export class SeversContainerComponent implements OnInit {
         return 'black';
     }
   }
+
+  getServerStyle(): object {
+    return {'color': this.serverColor()};
+  }
 }
