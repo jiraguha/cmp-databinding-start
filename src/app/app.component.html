@@ -1,11 +1,7 @@
 <div class="container">
   <app-cockpit (serverCreated)="onServerCreation($event)"
                (bluePrintCreated)="onBlueprintCreation($event)"></app-cockpit>
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="panel panel-default">
-        <app-severs-container *ngFor="let element of serverElements" [server]="element"></app-severs-container>
-      </div>
-    </div>
-  </div>
+
+  <app-severs-container *ngFor="let element of serverElements" [server]="element"></app-severs-container>
 </div>
+
