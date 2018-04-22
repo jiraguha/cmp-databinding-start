@@ -2,6 +2,8 @@
   <app-cockpit (serverCreated)="onServerCreation($event)"
                (bluePrintCreated)="onBlueprintCreation($event)"></app-cockpit>
 
-  <app-severs-container *ngFor="let element of serverElements" [server]="element"></app-severs-container>
+  <app-severs-container *ngFor="let element of serverElements" [server]="element">
+    <p>scoped in {{containerName}} with {{getLength()}} container(s)</p>
+  </app-severs-container>
 </div>
 

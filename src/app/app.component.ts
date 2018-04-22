@@ -9,6 +9,12 @@ import {ServerType} from './server-type.enum';
 })
 export class AppComponent {
 
+  containerName = 'default container';
+
+  getLength() {
+    return this.serverElements.length;
+  }
+
   serverElements: Array<Server> = [new Server(ServerType.SERVER, 'Just a test', 'TestServer')];
 
   onServerCreation(even: Server) {
