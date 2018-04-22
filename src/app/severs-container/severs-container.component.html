@@ -6,6 +6,29 @@
         <p [ngStyle]="getServerStyle()" [ngClass]="{'blueprint': blueprintCkeck(), 'server': serverCkeck()}">
           {{ server.serverContent }}
         </p>
+
+        <p style="color: greenyellow; background-color: snow" *ngIf="onlineCheck()">
+          {{server.status}}
+        </p>
+
+        <p style="color: red ; background-color: snow" *ngIf="offlineCheck()">
+          {{server.status}}
+        </p>
+
+        <ng-container
+          *ngIf="bootingCheck(); then bootingServer"></ng-container>
+        <ng-template #bootingServer>
+          <p style="color: darkorange ; background-color: snow">
+            {{server.status}}
+          </p>
+        </ng-template>
+
+        <ng-template #unknown>
+          <p style="color: midnightblue ; background-color: snow">
+            {{server.status}}
+          </p>
+        </ng-template>
+
       </div>
     </div>
   </div>

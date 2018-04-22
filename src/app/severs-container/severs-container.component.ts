@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Server} from '../server';
 import {ServerType} from '../server-type.enum';
+import {ServerStatus} from '../server-status.enum';
 
 @Component({
   selector: 'app-severs-container',
@@ -31,10 +32,21 @@ export class SeversContainerComponent implements OnInit {
       case ServerType.BLUEPRINT :
         return 'blue';
       case ServerType.SERVER:
-        return 'red';
-      default:
         return 'black';
+      default:
+        return 'grey';
     }
+  }
+
+  onlineCheck(): boolean {
+    return this.server.status === ServerStatus.ONLINE;
+  }
+
+  offlineCheck(): boolean {
+    return this.server.status === ServerStatus.OFFLINE;
+  }
+  bootingCheck(): boolean {
+    return this.server.status === ServerStatus.BOOTING;
   }
 
   getServerStyle(): object {
